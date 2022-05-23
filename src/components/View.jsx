@@ -1,6 +1,8 @@
 import { nanoid } from 'nanoid';
 import { Row, Col, Card, ProgressBar } from 'react-bootstrap';
 
+import EventModifier from './EventModifier';
+
 export default function View(props) {
   const eventList = props.events.map((event) => {
     // event.id = nanoid();
@@ -12,7 +14,7 @@ export default function View(props) {
           </Card.Title>
           <Card.Text>{event.description}</Card.Text>
           <ProgressBar animated now={45} />
-          <props.EventCreator event={event} setEvents={props.setEvents} />
+          <EventModifier event={event} setEvents={props.setEvents} />
           {/* <Button variant="primary">Edit</Button> */}
         </Card.Body>
       </Card>

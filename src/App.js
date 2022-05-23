@@ -22,11 +22,7 @@ export default function App() {
       <Topbar />
       <Container className="view">
         <EventCreator setEvents={setEvents} />
-        <View
-          events={events}
-          setEvents={setEvents}
-          EventCreator={EventCreator}
-        />
+        <View events={events} setEvents={setEvents} />
       </Container>
     </main>
   );

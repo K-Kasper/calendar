@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Button, FormControl, Modal, InputGroup } from 'react-bootstrap';
 
-import { nanoid } from 'nanoid';
-
-export default function EventCreator(props) {
+export default function EventModifier(props) {
   const [input, setInput] = useState({
     name: '',
     startTime: '',
     description: '',
     id: null,
   });
+
+  useEffect(() => {
+    setInput({
+      name: props.event.name,
+      startTime: props.event.startTime,
+      description: props.event.description,
+      id: props.event.id,
+    });
+  }, []);
 
   function handleInput(event) {
     setInput((prevInput) => ({
@@ -29,24 +36,17 @@ export default function EventCreator(props) {
         name: input.name,
         startTime: input.startTime,
         description: input.description,
-        id: nanoid(),
+        id: input.id,
       },
-      // ...prevEvents.filter((event) => event.id !== input.id),
-      ...prevEvents,
+      ...prevEvents.filter((event) => event.id !== input.id),
     ]);
     handleClose();
-    setInput({
-      name: '',
-      startTime: '',
-      description: '',
-      id: null,
-    });
   }
 
   return (
     <div className="mt-3 mb-3">
       <Button variant="primary" onClick={handleShow}>
-        New event
+        Edit
       </Button>
 
       <Modal show={show} onHide={handleClose}>
