@@ -91,7 +91,7 @@ export default function EventCreator(props) {
             Close
           </Button>
           <Button variant="primary" onClick={handleSave}>
-            Save Changes
+            Create
           </Button>
         </Modal.Footer>
       </Modal>
