@@ -4,8 +4,7 @@ A time management system.
 
 ## To-do
 
-Functional feature bar
-Add a simple inputs component that can be used by EventModifier and EventCreator
+Functional progress bar
 Multiple week days
 Task completion
 Task completion rating
