@@ -9,6 +9,13 @@ export default function View(props) {
     );
   }
 
+  function progress(progress) {
+    if (progress >= 100) {
+      return <ProgressBar variant="success" now={progress} />;
+    }
+    return <ProgressBar animated now={progress} />;
+  }
+
   const eventList = props.events.map((event) => {
     return (
       <Card style={{ width: 'auto' }} key={event.id}>
@@ -17,9 +24,13 @@ export default function View(props) {
             {event.name} | {event.startTime} - {event.endTime}
           </Card.Title>
           <Card.Text>{event.description}</Card.Text>
-          <ProgressBar animated now={50} />
+          {progress(event.progress)}
           <Col className="mt-3 mb-3 d-flex justify-content-between gap-5">
-            <EventModifier event={event} setEvents={props.setEvents} />
+            <EventModifier
+              event={event}
+              setEvents={props.setEvents}
+              fields={props.fields}
+            />
             <Button
               className="btn btn-danger"
               onClick={() => eventRemove(event.id)}
