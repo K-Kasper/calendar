@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, FormControl, Modal, InputGroup } from 'react-bootstrap';
 
 import { nanoid } from 'nanoid';
@@ -7,6 +7,7 @@ export default function EventCreator(props) {
   const [input, setInput] = useState({
     name: '',
     startTime: '',
+    endTime: '',
     description: '',
     id: null,
   });
@@ -28,16 +29,17 @@ export default function EventCreator(props) {
       {
         name: input.name,
         startTime: input.startTime,
+        endTime: input.endTime,
         description: input.description,
         id: nanoid(),
       },
-      // ...prevEvents.filter((event) => event.id !== input.id),
       ...prevEvents,
     ]);
     handleClose();
     setInput({
       name: '',
       startTime: '',
+      endTime: '',
       description: '',
       id: null,
     });
@@ -51,7 +53,7 @@ export default function EventCreator(props) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Event form</Modal.Title>
+          <Modal.Title>New event</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <InputGroup className="mb-3">
@@ -76,6 +78,16 @@ export default function EventCreator(props) {
           </InputGroup>
           <InputGroup className="mb-3">
             <FormControl
+              placeholder="End time"
+              aria-label="End time"
+              aria-describedby="basic-addon1"
+              name="endTime"
+              onChange={handleInput}
+              value={input.endTime}
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <FormControl
               placeholder="Description"
               aria-label="Description"
               aria-describedby="basic-addon1"
@@ -84,7 +96,6 @@ export default function EventCreator(props) {
               value={input.description}
             />
           </InputGroup>
-          Woohoo, you're reading this text in a modal!
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
