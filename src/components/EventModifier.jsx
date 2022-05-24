@@ -9,7 +9,7 @@ export default function EventModifier(props) {
     const fields = { ...props.event };
     delete fields.id;
     setInput(fields);
-  }, []);
+  }, [props.event]);
 
   function handleSave() {
     props.setEvents((prevEvents) => [

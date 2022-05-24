@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 
 import { nanoid } from 'nanoid';
@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import Topbar from './components/Topbar';
 import EventCreator from './components/EventCreator';
 import View from './components/View';
-import Toaster from './components/Toaster';
+// import Toaster from './components/Toaster';
 
 export default function App() {
   const [events, setEvents] = useState([

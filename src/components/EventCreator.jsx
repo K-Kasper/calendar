@@ -14,7 +14,7 @@ export default function EventCreator(props) {
       fields[props.fields[i]] = '';
     }
     setInput(fields);
-  }, []);
+  }, [props.fields]);
 
   function handleSave() {
     props.setEvents((prevEvents) => [
