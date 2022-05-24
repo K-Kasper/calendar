@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -9,6 +9,8 @@ import Topbar from './components/Topbar';
 import EventCreator from './components/EventCreator';
 import View from './components/View';
 // import Toaster from './components/Toaster';
+
+let saving = false;
 
 export default function App() {
   const [events, setEvents] = useState([
@@ -21,6 +23,22 @@ export default function App() {
       progress: 1,
     },
   ]);
+
+  useEffect(() => {
+    if (saving === true) {
+      localStorage.setItem('calendar', JSON.stringify(events));
+    }
+  }, [events]);
+
+  useEffect(() => {
+    async function allowSaves() {
+      if (localStorage.getItem('calendar') !== null) {
+        await setEvents(JSON.parse(localStorage.getItem('calendar')));
+        saving = true;
+      }
+    }
+    allowSaves();
+  }, []);
 
   const inputFields = [
     'name',
