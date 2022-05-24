@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
 import { nanoid } from 'nanoid';
 
@@ -12,6 +12,7 @@ export default function App() {
     {
       name: 'Your first event',
       startTime: '20:00',
+      endTime: '21:15',
       description: 'Description',
       id: nanoid(),
     },
