@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { Row, Col, Card, ProgressBar, Button } from 'react-bootstrap';
 
 import { useReward } from 'react-rewards';
@@ -14,7 +16,6 @@ export default function View(props) {
         event.id === id ? { ...event, progress: 100 } : event
       )
     );
-    console.log(props.events);
     reward();
   }
 
