@@ -1,8 +1,23 @@
 import { Row, Col, Card, ProgressBar, Button } from 'react-bootstrap';
 
+import { useReward } from 'react-rewards';
+
 import EventModifier from './EventModifier';
 
 export default function View(props) {
+  const { reward, isAnimating } = useReward('rewardId', 'confetti');
+  // const { reward, isAnimating } = useReward('rewardId', 'emoji');
+
+  function eventDone(id) {
+    props.setEvents((prevEvents) =>
+      prevEvents.map((event) =>
+        event.id === id ? { ...event, progress: 100 } : event
+      )
+    );
+    console.log(props.events);
+    reward();
+  }
+
   function eventRemove(id) {
     props.setEvents((prevEvents) =>
       prevEvents.filter((event) => event.id !== id)
@@ -26,6 +41,14 @@ export default function View(props) {
           <Card.Text>{event.description}</Card.Text>
           {progress(event.progress)}
           <Col className="mt-3 mb-3 d-flex justify-content-between gap-5">
+            <Button
+              variant="success"
+              disabled={isAnimating}
+              onClick={() => eventDone(event.id)}
+            >
+              <span id="rewardId" />
+              Done
+            </Button>
             <EventModifier
               event={event}
               setEvents={props.setEvents}
