@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import { nanoid } from 'nanoid';
 
@@ -32,7 +34,14 @@ export default function App() {
     <main>
       <Topbar />
       <Container className="view">
-        <EventCreator fields={inputFields} setEvents={setEvents} />
+        <div className="mt-3 mb-3 d-flex justify-content-between">
+          <EventCreator fields={inputFields} setEvents={setEvents} />
+          <DropdownButton id="dropdown-basic-button" title="View">
+            <Dropdown.Item href="#/action-1">1 day</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">3 days</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">7 days</Dropdown.Item>
+          </DropdownButton>
+        </div>
         <View events={events} fields={inputFields} setEvents={setEvents} />
       </Container>
     </main>

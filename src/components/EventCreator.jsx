@@ -28,14 +28,12 @@ export default function EventCreator(props) {
   }
 
   return (
-    <div className="mt-3 mb-3">
-      <EventModal
-        input={input}
-        setInput={setInput}
-        handleSave={handleSave}
-        title={'New event'}
-        button={'New event'}
-      />
-    </div>
+    <EventModal
+      input={input}
+      setInput={setInput}
+      handleSave={handleSave}
+      title={'New event'}
+      button={'New event'}
+    />
   );
 }
