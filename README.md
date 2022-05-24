@@ -4,14 +4,14 @@ A time management system.
 
 ## To-do
 
-Add labels to EventModals input fields
-Multiple week days
-Task completion
-Task completion rating
-Task nesting / subtasks
-Day rating
-A proper day view with hours
-Time slots in the day
+- Add labels to EventModals input fields
+- Multiple week days
+- Task completion
+- Task completion rating
+- Task nesting / subtasks
+- Day rating
+- A proper day view with hours
+- Time slots in the day
 
 ## Misc notes
 
