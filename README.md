@@ -4,7 +4,7 @@ A time management system.
 
 ## To-do
 
-Functional progress bar
+Add labels to EventModals input fields
 Multiple week days
 Task completion
 Task completion rating
