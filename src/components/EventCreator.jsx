@@ -34,6 +34,7 @@ export default function EventCreator(props) {
         setInput={setInput}
         handleSave={handleSave}
         title={'New event'}
+        button={'New event'}
       />
     </div>
   );

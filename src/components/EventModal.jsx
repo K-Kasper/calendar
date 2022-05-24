@@ -47,7 +47,7 @@ export default function EventModifier(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Edit
+        {props.button}
       </Button>
 
       <Modal show={show} onHide={handleClose}>

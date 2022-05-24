@@ -29,6 +29,7 @@ export default function EventModifier(props) {
       setInput={setInput}
       handleSave={handleSave}
       title={title}
+      button={'Edit'}
     />
   );
 }
