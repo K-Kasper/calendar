@@ -4,6 +4,7 @@ A time management system.
 
 ## To-do
 
+- Local saving and loading
 - Add labels to EventModals input fields
 - Multiple week days
 - Task completion
@@ -12,6 +13,7 @@ A time management system.
 - Day rating
 - A proper day view with hours
 - Time slots in the day
+- Spreadsheet view & React Router
 
 ## Ideas
 
