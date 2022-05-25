@@ -4,13 +4,14 @@ A time management system.
 
 ## To-do
 
+- Description accepting markdown
 - A proper day view with hours
 - Time slots in the day
 - Multiple week days
 - Task completion rating
 - Task nesting / subtasks
-- Day rating
 - Spreadsheet view & React Router
+- Day rating
 
 ## Ideas
 
