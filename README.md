@@ -5,6 +5,7 @@ A time management system.
 ## To-do
 
 - Description accepting markdown
+- Notes screen?
 - A proper day view with hours
 - Time slots in the day
 - Multiple week days
