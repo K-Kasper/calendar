@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, FormControl, Modal, InputGroup } from 'react-bootstrap';
+import { Button, Modal, FloatingLabel, Form } from 'react-bootstrap';
 
 export default function EventModifier(props) {
   const fixPlaceholder = (i) => {
@@ -16,15 +16,31 @@ export default function EventModifier(props) {
     return fixed.join('');
   };
 
+  // const inputFields = Object.entries(props.input).map((i, index) => (
+  //   <InputGroup className="mb-3" key={index}>
+  //     <FormControl
+  //       placeholder={fixPlaceholder(i[0])}
+  //       name={i[0]}
+  //       onChange={handleInput}
+  //       value={i[1]}
+  //     />
+  //   </InputGroup>
+  // ));
+
   const inputFields = Object.entries(props.input).map((i, index) => (
-    <InputGroup className="mb-3" key={index}>
-      <FormControl
-        placeholder={fixPlaceholder(i[0])}
+    <FloatingLabel
+      key={index}
+      controlId="floatingInput"
+      label={fixPlaceholder(i[0])}
+      className="mb-3"
+    >
+      <Form.Control
         name={i[0]}
         onChange={handleInput}
         value={i[1]}
+        placeholder={fixPlaceholder(i[0])}
       />
-    </InputGroup>
+    </FloatingLabel>
   ));
 
   function handleInput(event) {
