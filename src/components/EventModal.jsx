@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Modal, FloatingLabel, Form } from 'react-bootstrap';
 
-export default function EventModifier(props) {
+export default function EventModal(props) {
   const fixPlaceholder = (i) => {
     const fixed = [];
     for (let char in i) {
