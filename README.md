@@ -5,7 +5,7 @@ A time management system.
 ## To-do
 
 - Description accepting markdown
-- If description -> <FormControl as="textarea" />
+- If description -> <FormControl as="textarea" /> || something else, but basically description overhaul time
 - ! SAVES DISAPPEAR SOMETIMES !
 - Notes screen?
 - A proper day view with hours
