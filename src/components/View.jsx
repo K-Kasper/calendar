@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { Row, Col, Card, ProgressBar, Button } from 'react-bootstrap';
 
 import { useReward } from 'react-rewards';
