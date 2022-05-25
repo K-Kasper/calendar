@@ -16,21 +16,10 @@ export default function EventModifier(props) {
     return fixed.join('');
   };
 
-  // const inputFields = Object.entries(props.input).map((i, index) => (
-  //   <InputGroup className="mb-3" key={index}>
-  //     <FormControl
-  //       placeholder={fixPlaceholder(i[0])}
-  //       name={i[0]}
-  //       onChange={handleInput}
-  //       value={i[1]}
-  //     />
-  //   </InputGroup>
-  // ));
-
   const inputFields = Object.entries(props.input).map((i, index) => (
     <FloatingLabel
       key={index}
-      controlId="floatingInput"
+      controlId={i[0]}
       label={fixPlaceholder(i[0])}
       className="mb-3"
     >
@@ -39,6 +28,8 @@ export default function EventModifier(props) {
         onChange={handleInput}
         value={i[1]}
         placeholder={fixPlaceholder(i[0])}
+        type="text"
+        required
       />
     </FloatingLabel>
   ));
@@ -50,7 +41,8 @@ export default function EventModifier(props) {
     }));
   }
 
-  function handleSave() {
+  function handleSave(e) {
+    e.preventDefault();
     props.handleSave();
     handleClose();
   }
@@ -70,15 +62,21 @@ export default function EventModifier(props) {
         <Modal.Header closeButton>
           <Modal.Title>{props.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{inputFields}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleSave}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <Form>
+          <Modal.Body>{inputFields}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="danger" onClick={handleClose}>
+              Close
+            </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              onClick={(e) => handleSave(e)}
+            >
+              {props.submitButton}
+            </Button>
+          </Modal.Footer>
+        </Form>
       </Modal>
     </>
   );

@@ -34,6 +34,7 @@ export default function EventCreator(props) {
       handleSave={handleSave}
       title={'New event'}
       button={'New event'}
+      submitButton={'Create'}
     />
   );
 }

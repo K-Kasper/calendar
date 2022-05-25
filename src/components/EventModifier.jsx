@@ -30,6 +30,7 @@ export default function EventModifier(props) {
       handleSave={handleSave}
       title={title}
       button={'Edit'}
+      submitButton={'Save changes'}
     />
   );
 }
