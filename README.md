@@ -4,7 +4,6 @@ A time management system.
 
 ## To-do
 
-- Local saving and loading
 - Add labels to EventModals input fields
 - Multiple week days
 - Task completion
