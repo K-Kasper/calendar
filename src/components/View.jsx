@@ -1,8 +1,10 @@
 import { Row, Col, Card, ProgressBar, Button } from 'react-bootstrap';
 
 import { useReward } from 'react-rewards';
+import { marked } from 'marked';
 
 import EventModifier from './EventModifier';
+import Markdown from './Markdown';
 
 export default function View(props) {
   const { reward, isAnimating } = useReward('rewardId', 'confetti');
@@ -37,7 +39,7 @@ export default function View(props) {
           <Card.Title>
             {event.name} | {event.startTime} - {event.endTime}
           </Card.Title>
-          <Card.Text>{event.description}</Card.Text>
+          <Markdown input={event.description} />
           {progress(event.progress)}
           <Col className="mt-3 mb-3 d-flex justify-content-between gap-5">
             <Button

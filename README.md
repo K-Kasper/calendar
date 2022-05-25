@@ -5,6 +5,8 @@ A time management system.
 ## To-do
 
 - Description accepting markdown
+- If description -> <FormControl as="textarea" />
+- ! SAVES DISAPPEAR SOMETIMES !
 - Notes screen?
 - A proper day view with hours
 - Time slots in the day
