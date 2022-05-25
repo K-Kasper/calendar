@@ -4,7 +4,6 @@ A time management system.
 
 ## To-do
 
-- Form validation
 - Multiple week days
 - Task completion
 - Task completion rating
