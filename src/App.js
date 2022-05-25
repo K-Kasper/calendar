@@ -48,12 +48,22 @@ export default function App() {
     'progress',
   ];
 
+  var today = new Date();
+
+  var date =
+    today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  var time =
+    today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+
   return (
     <main>
       <Topbar />
       <Container className="view">
         <div className="mt-3 mb-3 d-flex justify-content-between">
           <EventCreator fields={inputFields} setEvents={setEvents} />
+          <h3>
+            {time} | {date}
+          </h3>
           <DropdownButton id="dropdown-basic-button" title="View">
             <Dropdown.Item href="#/action-1">1 day</Dropdown.Item>
             <Dropdown.Item href="#/action-2">3 days</Dropdown.Item>
