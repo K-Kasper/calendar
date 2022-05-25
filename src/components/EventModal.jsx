@@ -28,13 +28,44 @@ export default function EventModal(props) {
   };
 
   const validityCheck = (e) => {
-    if (e.value.length < 1 || e.value.length > 30) {
-      e.className = 'form-control is-invalid';
-      e.focus();
-      return false;
-    } else {
-      e.className = 'form-control is-valid';
-      return true;
+    switch (e.name) {
+      case 'progress':
+        if (e.value.search(/\D+/) !== -1) {
+          e.className = 'form-control is-invalid';
+          e.focus();
+          return false;
+        }
+        if (+e.value > 100) {
+          e.value = 100;
+        }
+        if (e.value.length < 1 || +e.value > 100 || +e.value < 0) {
+          e.className = 'form-control is-invalid';
+          e.focus();
+          return false;
+        } else {
+          e.className = 'form-control is-valid';
+          return true;
+        }
+
+      default:
+        if (e.value.length < 1 || e.value.length > 30) {
+          e.className = 'form-control is-invalid';
+          e.focus();
+          return false;
+        } else {
+          e.className = 'form-control is-valid';
+          return true;
+        }
+    }
+  };
+
+  const feedbackMessage = (i) => {
+    console.log(i);
+    switch (i) {
+      case 'progress':
+        return `${fixPlaceholder(i)} has to be a number from 0-100.`;
+      default:
+        return `${fixPlaceholder(i)} has to be 1-30 characters long.`;
     }
   };
 
@@ -54,7 +85,7 @@ export default function EventModal(props) {
         required
       />
       <Form.Control.Feedback type="invalid">
-        {fixPlaceholder(i[0])} has to be 1-30 characters long.
+        {feedbackMessage(i[0])}
       </Form.Control.Feedback>
     </FloatingLabel>
   ));
