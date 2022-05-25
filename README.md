@@ -4,8 +4,8 @@ A time management system.
 
 ## To-do
 
+- Field specific validation rules for events (progress not over 100 etc)
 - Multiple week days
-- Task completion
 - Task completion rating
 - Task nesting / subtasks
 - Day rating
