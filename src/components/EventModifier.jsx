@@ -21,7 +21,7 @@ export default function EventModifier(props) {
     ]);
   }
 
-  const title = `Editing: ${props.event.name}`;
+  const title = `Editing "${props.event.name}"`;
 
   return (
     <EventModal
