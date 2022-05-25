@@ -60,7 +60,6 @@ export default function EventModal(props) {
   };
 
   const feedbackMessage = (i) => {
-    console.log(i);
     switch (i) {
       case 'progress':
         return `${fixPlaceholder(i)} has to be a number from 0-100.`;
