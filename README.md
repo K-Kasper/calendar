@@ -4,7 +4,7 @@ A time management system.
 
 ## To-do
 
-- Add labels to EventModals input fields
+- Form validation
 - Multiple week days
 - Task completion
 - Task completion rating
