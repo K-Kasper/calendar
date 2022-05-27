@@ -16,6 +16,7 @@ export default function App() {
   const [events, setEvents] = useState([
     {
       id: nanoid(),
+      date: '5.6.2022',
       name: 'Your first event',
       startTime: '20:00',
       endTime: '21:15',
@@ -42,6 +43,7 @@ export default function App() {
 
   const inputFields = [
     'name',
+    'date',
     'startTime',
     'endTime',
     'description',
