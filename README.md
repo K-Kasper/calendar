@@ -4,11 +4,10 @@ A time management system.
 
 ## To-do
 
-- Description accepting markdown
-- Notes screen?
+- Multiple week days
+- How to deal with completed tasks?
 - A proper day view with hours
 - Time slots in the day
-- Multiple week days
 - Task completion rating
 - Task nesting / subtasks
 - Spreadsheet view & React Router
